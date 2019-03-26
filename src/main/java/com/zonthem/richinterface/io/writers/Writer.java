@@ -1,4 +1,4 @@
 package com.zonthem.richinterface.io.writers;
 
-public class DatWriter implements Writer {
+public interface Writer {
 }
