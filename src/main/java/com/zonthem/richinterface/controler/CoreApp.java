@@ -18,31 +18,31 @@ public class CoreApp {
 
     }
 
-    public void setReader(FileType type) {
-        this.reader = getNewReader(type);
+    public void setReader(FileType type, String path) {
+        this.reader = getNewReader(type, path);
     }
 
-    private Reader getNewReader(FileType type) {
+    private Reader getNewReader(FileType type, String path) {
         switch (type) {
             case XML:
-                return new XmlReader();
+                return new XmlReader(path);
             case DAT:
-                return new DatReader();
+                return new DatReader(path);
             default:
                    return null;
         }
     }
 
-    public void setWriter(FileType type) {
-        this.writer = getNewWriter(type);
+    public void setWriter(FileType type, String path) {
+        this.writer = getNewWriter(type, path);
     }
 
-    private Writer getNewWriter(FileType type) {
+    private Writer getNewWriter(FileType type, String path) {
         switch (type) {
             case XML:
-                return new XmlWriter();
+                return new XmlWriter(path);
             case DAT:
-                return new DatWriter();
+                return new DatWriter(path);
             default:
                 return null;
         }
