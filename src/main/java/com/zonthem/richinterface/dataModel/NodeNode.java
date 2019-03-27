@@ -11,11 +11,21 @@ public class NodeNode {
 
     private NodeList childNodeList;
 
+    private List<NodeAttribute> attributs;
+
     private String textContent;
 
     public NodeNode(String _name) {
         name = _name;
         childNodes = new ArrayList<>();
+        attributs = new ArrayList<>();
+    }
+
+    public NodeNode(String _name, String _text) {
+        textContent = _text;
+        name = _name;
+        childNodes = new ArrayList<>();
+        attributs = new ArrayList<>();
     }
 
     public String getName() {
@@ -30,6 +40,10 @@ public class NodeNode {
         return childNodeList;
     }
 
+    public List<NodeAttribute> getAttributs() {
+        return attributs;
+    }
+
     public String getTextContent() {
         return textContent;
     }
@@ -40,6 +54,10 @@ public class NodeNode {
 
     public void addNode(NodeNode node) {
         this.childNodes.add(node);
+    }
+
+    public void addAttributs(NodeAttribute attr) {
+        this.attributs.add(attr);
     }
 
     public void setChildNodeList(NodeList childNodeList) {

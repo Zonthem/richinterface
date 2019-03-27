@@ -10,6 +10,11 @@ public class NodeAttribute {
         name = _name;
     }
 
+    public NodeAttribute(String _name, String content) {
+        name = _name;
+        textContent = content;
+    }
+
     public String getName() {
         return name;
     }
